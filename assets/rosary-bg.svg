@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" preserveAspectRatio="xMidYMid slice">
+  <rect width="1200" height="1600" fill="#fbf5ea"/>
+  <g opacity="0.18" fill="none" stroke="#315985" stroke-width="8" stroke-linecap="round">
+    <path d="M870 170c-165 120-230 258-196 414 33 151 164 241 304 208 129-31 200-151 170-279-34-142-170-224-322-197-197 36-348 208-420 478-52 194-54 386-44 562"/>
+    <path d="M362 1356c-8 82 24 151 92 199"/>
+  </g>
+  <g opacity="0.28" fill="#b08a3c">
+    <circle cx="850" cy="195" r="15"/>
+    <circle cx="797" cy="250" r="14"/>
+    <circle cx="754" cy="314" r="14"/>
+    <circle cx="725" cy="386" r="13"/>
+    <circle cx="712" cy="462" r="13"/>
+    <circle cx="724" cy="536" r="13"/>
+    <circle cx="766" cy="601" r="14"/>
+    <circle cx="832" cy="640" r="15"/>
+    <circle cx="910" cy="637" r="15"/>
+    <circle cx="981" cy="596" r="14"/>
+    <circle cx="1023" cy="528" r="14"/>
+    <circle cx="1013" cy="452" r="13"/>
+    <circle cx="957" cy="393" r="13"/>
+    <circle cx="878" cy="372" r="13"/>
+    <circle cx="791" cy="390" r="13"/>
+    <circle cx="706" cy="436" r="13"/>
+    <circle cx="629" cy="506" r="13"/>
+    <circle cx="565" cy="595" r="13"/>
+    <circle cx="514" cy="699" r="13"/>
+    <circle cx="475" cy="814" r="13"/>
+    <circle cx="448" cy="936" r="13"/>
+    <circle cx="431" cy="1060" r="13"/>
+    <circle cx="424" cy="1185" r="13"/>
+    <circle cx="427" cy="1310" r="13"/>
+  </g>
+  <g opacity="0.22" fill="#315985">
+    <rect x="405" y="1385" width="42" height="150" rx="10"/>
+    <rect x="351" y="1438" width="150" height="42" rx="10"/>
+  </g>
+</svg>
