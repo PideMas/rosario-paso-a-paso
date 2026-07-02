@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7efe1">
+    <meta name="description" content="Rosario Paso a Paso, una PWA catolica offline-first para rezar el Santo Rosario con guia completa.">
+    <title>El Santo Rosario</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="assets/icon-192.png">
+    <link rel="apple-touch-icon" href="assets/icon-192.png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar" aria-label="Controles de la aplicacion">
+        <a class="brand" href="#inicio" aria-label="Volver al inicio">
+          <img src="assets/cross.svg" alt="" width="34" height="34">
+          <span>El Santo Rosario versión Digital</span>
+        </a>
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Cambiar modo claro u oscuro" title="Cambiar modo">
+          <span aria-hidden="true">☾</span>
+        </button>
+      </header>
+
+      <p class="offline-note" id="offlineNote" hidden>Estás rezando sin conexión. El Rosario seguirá disponible en este dispositivo.</p>
+
+      <main>
+        <section class="home-view" id="homeView" aria-labelledby="homeTitle">
+          <div class="home-copy">
+            <p class="today-label" id="todayLabel">Misterio de hoy</p>
+            <h1 id="homeTitle">Reza el Santo Rosario, estés donde estés.</h1>
+            <div class="today-card" aria-live="polite">
+              <strong id="todayMystery">Misterios Gozosos</strong>
+              <small id="todayMysteryDays">Lunes y sábado</small>
+            </div>
+          </div>
+
+          <div class="home-actions" aria-label="Acciones principales">
+            <button class="primary-action" id="startTodayBtn" type="button">Comenzar Rosario de hoy</button>
+            <button id="continueBtn" type="button">Continuar donde iba</button>
+            <button id="chooseBtn" type="button">Elegir otro misterio</button>
+            <button id="shareBtn" type="button">Compartir por WhatsApp</button>
+          </div>
+
+          <div class="home-footer">
+            <div class="visitor-counter" aria-live="polite">
+              <span>Fieles visitantes</span>
+              <strong id="visitorCount">--</strong>
+            </div>
+            <button class="support-button" id="donationBtn" type="button">Apoyar este proyecto</button>
+          </div>
+        </section>
+
+        <section class="chooser-view" id="chooserView" hidden aria-labelledby="chooserTitle">
+          <h2 id="chooserTitle">Elige los misterios</h2>
+          <div class="mystery-grid" id="mysteryGrid"></div>
+          <button class="quiet-action" id="backHomeBtn" type="button">Volver al inicio</button>
+        </section>
+
+        <section class="guide-view" id="guideView" hidden aria-labelledby="stepTitle">
+          <div class="guide-status">
+            <div>
+              <span>Dónde estoy</span>
+              <strong id="whereAmI">Inicio</strong>
+            </div>
+            <div>
+              <span>Misterio</span>
+              <strong id="mysteryProgress">Misterio 1 de 5</strong>
+            </div>
+          </div>
+
+          <div class="progress-block" aria-label="Progreso del Rosario">
+            <div class="progress-label">
+              <span>Progreso general</span>
+              <strong id="generalProgressLabel">0%</strong>
+            </div>
+            <div class="progress-track"><span id="generalProgressBar"></span></div>
+          </div>
+
+          <section class="rosary-visual" aria-label="Rosario visual">
+            <div class="rosary-beads" id="rosaryBeads"></div>
+            <p id="rosaryVisualLabel" hidden>Las cuentas se colorean al avanzar.</p>
+          </section>
+
+          <article class="prayer-card">
+            <div class="card-kicker" id="decadeProgress">Inicio del Rosario</div>
+            <div class="prayer-heading">
+              <h2 id="stepTitle">Señal de la Cruz</h2>
+              <div class="step-nav" aria-label="Avanzar en la oración">
+                <button id="prevBtn" type="button">Anterior</button>
+                <button class="primary-action" id="nextBtn" type="button">Siguiente</button>
+              </div>
+            </div>
+            <p class="action-note" id="actionNote" hidden></p>
+            <p class="contemplation" id="currentMysteryText">Comienza el Rosario con recogimiento.</p>
+            <div class="prayer-text" id="prayerText"></div>
+          </article>
+
+          <div class="guide-controls">
+            <button id="pauseBtn" type="button">Pausar</button>
+            <button id="restartBtn" type="button">Reiniciar</button>
+          </div>
+        </section>
+
+        <p class="toast" id="toast" role="status" aria-live="polite" hidden></p>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="prayerModal" hidden>
+      <section class="prayer-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-header">
+          <h2 id="modalTitle">Oración</h2>
+          <button class="icon-button" id="closeModalBtn" type="button" aria-label="Cerrar">×</button>
+        </div>
+        <p id="modalPrayerText"></p>
+      </section>
+    </div>
+
+    <script src="data/rosario.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
