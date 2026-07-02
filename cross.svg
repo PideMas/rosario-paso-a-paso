@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Cruz">
+  <rect width="128" height="128" rx="28" fill="#f7efe1"/>
+  <path d="M59 20h10c3 0 5 2 5 5v27h25c3 0 5 2 5 5v10c0 3-2 5-5 5H74v32c0 3-2 5-5 5H59c-3 0-5-2-5-5V72H29c-3 0-5-2-5-5V57c0-3 2-5 5-5h25V25c0-3 2-5 5-5Z" fill="#315985"/>
+  <circle cx="64" cy="64" r="47" fill="none" stroke="#b08a3c" stroke-width="5"/>
+</svg>
