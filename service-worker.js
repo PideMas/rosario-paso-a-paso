@@ -1,4 +1,4 @@
-const CACHE_NAME = "rosario-paso-a-paso-v6";
+const CACHE_NAME = "rosario-paso-a-paso-v7";
 const ASSETS = [
   "./",
   "./index.html",

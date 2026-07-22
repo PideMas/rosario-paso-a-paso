@@ -312,7 +312,7 @@ function renderStepBody(step) {
 
 function getDecadeLabel(step) {
   if (step.aveMaria === 10 && step.decade > 0) {
-    return `Decena ${step.decade} de 5: Avemaría (10 veces)`;
+    return `Decena ${step.decade} de 5: Ave María (10 veces)`;
   }
   if (step.decade > 0) {
     return `Decena ${step.decade} de 5`;
@@ -580,7 +580,7 @@ function registerServiceWorker() {
   if (!("serviceWorker" in navigator)) return;
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("service-worker.js").catch(() => {
-      showToast("No se pudo preparar el modo sin conexion en este navegador.");
+      showToast("No se pudo preparar el modo sin conexión en este navegador.");
     });
   });
 }
