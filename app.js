@@ -24,6 +24,7 @@ const nodes = {
   toast: document.querySelector("#toast"),
   whereAmI: document.querySelector("#whereAmI"),
   mysteryProgress: document.querySelector("#mysteryProgress"),
+  mysteryDaysGuide: document.querySelector("#mysteryDaysGuide"),
   generalProgressLabel: document.querySelector("#generalProgressLabel"),
   generalProgressBar: document.querySelector("#generalProgressBar"),
   decadeProgress: document.querySelector("#decadeProgress"),
@@ -244,7 +245,8 @@ function pauseRosary() {
 function restartRosary() {
   state = createState(state.mysteryKey, 0, "iniciado");
   saveProgress();
-  renderStep();
+  showView("home");
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function renderStep() {
@@ -255,8 +257,10 @@ function renderStep() {
   state.date = new Date().toISOString().slice(0, 10);
   saveProgress();
 
-  nodes.whereAmI.textContent = capitalize(step.area);
-  nodes.mysteryProgress.textContent = step.mysteryIndex >= 0 ? `Misterio ${step.mysteryIndex + 1} de 5` : "Preparación y cierre";
+  nodes.whereAmI.textContent = getWhereAmI(step);
+  const selectedSet = data.mysterySets[state.mysteryKey];
+  nodes.mysteryProgress.textContent = selectedSet.name;
+  nodes.mysteryDaysGuide.textContent = selectedSet.days;
   nodes.generalProgressLabel.textContent = `${percent}%`;
   nodes.generalProgressBar.style.width = `${percent}%`;
   nodes.decadeProgress.textContent = getDecadeLabel(step);
@@ -318,6 +322,14 @@ function getDecadeLabel(step) {
     return `Decena ${step.decade} de 5`;
   }
   return step.area === "oración final" ? "Oraciones finales" : "Inicio del Rosario";
+}
+
+function getWhereAmI(step) {
+  if (step.area === "inicio") return "Oraciones iniciales";
+  if (step.area === "misterio" && step.mysteryIndex >= 0) return `${ordinal(step.mysteryIndex + 1)} misterio de 5`;
+  if (step.area === "decena" && step.decade > 0) return `Decena ${step.decade} de 5`;
+  if (step.area === "oración final") return "Oraciones finales";
+  return capitalize(step.area);
 }
 
 function renderRosaryVisual() {
